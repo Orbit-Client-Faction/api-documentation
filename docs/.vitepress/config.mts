@@ -59,7 +59,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/Orbit-Client-Faction/orbit-client' }
+      { icon: 'github', link: 'https://github.com/Orbit-Client-Faction/api-documentation' }
     ],
 
     footer: {
