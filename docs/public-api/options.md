@@ -23,6 +23,24 @@ Settings are returned as an array on each module:
       "serverControllable": true,
       "serverDisabled": false,
       "effectiveValue": true
+    },
+    {
+      "id": "liquidPrinter",
+      "name": "Liquid Printer",
+      "type": "boolean",
+      "value": true,
+      "serverControllable": true,
+      "serverDisabled": false,
+      "effectiveValue": true
+    },
+    {
+      "id": "midairPlacement",
+      "name": "Midair Placement",
+      "type": "boolean",
+      "value": false,
+      "serverControllable": true,
+      "serverDisabled": false,
+      "effectiveValue": false
     }
   ]
 }
@@ -76,3 +94,29 @@ Both operations return a `restriction` object:
 ```
 
 `setting.enable` does not force the player's setting on. It only removes the server restriction so the player's own setting value applies again.
+
+## Restriction Semantics
+
+`setting.disable` blocks the restricted behavior for the current server session and never modifies the player's stored settings. All setting restrictions clear automatically when the player disconnects.
+
+For example, blocking automatic liquid placement and midair placement:
+
+```json
+{
+  "v": 1,
+  "op": "setting.disable",
+  "moduleId": "Printer",
+  "settingId": "liquidPrinter"
+}
+```
+
+```json
+{
+  "v": 1,
+  "op": "setting.disable",
+  "moduleId": "Printer",
+  "settingId": "midairPlacement"
+}
+```
+
+`midairPlacement` is a virtual setting over the player's `Place Adjacent` printer toggle. Disabling it does not turn a player toggle off — it forces adjacent-only placement, so Printer cannot place blocks floating in midair while the restriction is active. See [Midair Placement](/reference/modules#midair-placement) for the full semantics.

@@ -24,6 +24,8 @@ Orbit Client sends a handshake payload like this:
 
 After receiving this payload, the server can send public API requests on `orbitclient:api`.
 
+`minecraftVersion` is `1.8.9` on the legacy (Forge) client; the modern (Fabric) client reports its running game version, for example `26.1.2`.
+
 ## 3. Query Module State
 
 Send `state_request` for only the modules your server cares about:

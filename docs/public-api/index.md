@@ -2,7 +2,7 @@
 
 The public API lets server owners integrate directly with Orbit Client players while they are connected to a Minecraft server.
 
-Orbit Client registers a Forge custom payload channel named `orbitclient:api`. The protocol uses JSON payloads with `v: 1` and is currently focused on supported module state, server-enforced module restrictions, and allowlisted setting restrictions.
+Orbit Client registers a custom payload (plugin messaging) channel named `orbitclient:api` on both the legacy (1.8.9 Forge) and modern (Fabric) clients. The protocol uses JSON payloads with `v: 1` and is currently focused on supported module state, server-enforced module restrictions, and allowlisted setting restrictions.
 
 ## Operations
 
@@ -26,7 +26,7 @@ Operation names are exact. The client does not accept aliases.
 | Channel | `orbitclient:api` |
 | Encoding | UTF-8 JSON |
 | Protocol version | `1` |
-| Minecraft version | `1.8.9` |
+| Minecraft version | Reported in `hello`: `1.8.9` on the legacy client, the running game version (for example `26.1.2`) on the modern client |
 
 The client accepts JSON sent as raw UTF-8, Java `readUTF`, or Minecraft `PacketBuffer.readStringFromBuffer`.
 

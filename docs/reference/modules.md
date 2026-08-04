@@ -41,4 +41,16 @@ Servers can restrict only the settings listed here.
 | Module ID | Setting ID | Setting name | Behavior |
 | --- | --- | --- | --- |
 | `Printer` | `print360` | `360 Printer` | Prevents 360-degree Printer placement while restricted. |
+| `Printer` | `liquidPrinter` | `Liquid Printer` | Prevents automatic liquid (bucket) placement while restricted. |
+| `Printer` | `midairPlacement` | `Midair Placement` | Forces adjacent-only placement while restricted: Printer will not click an empty target cell that has no solid neighbor, so blocks cannot be placed floating in midair. |
 | `Minimap` | `playerRadar` | `Player Radar` | Prevents player radar entries from being shown while restricted. |
+
+Restrictions never modify the player's stored settings. The player's own values apply again when the restriction is removed or the player leaves the server.
+
+### Midair Placement
+
+`midairPlacement` is a virtual setting over the player's `Place Adjacent` printer toggle — there is no toggle named "Midair Placement" in the client UI:
+
+- `value: true` means the player currently allows midair placement (their `Place Adjacent` toggle is off).
+- `effectiveValue` reports whether midair placement can actually happen right now.
+- While `midairPlacement` is restricted, Printer behaves as if `Place Adjacent` is enabled. The player can still change the `Place Adjacent` toggle, but placements only happen against adjacent solid blocks until the restriction is lifted.

@@ -34,6 +34,24 @@ The `state_request` operation returns enabled and server-disabled state for supp
           "serverControllable": true,
           "serverDisabled": false,
           "effectiveValue": true
+        },
+        {
+          "id": "liquidPrinter",
+          "name": "Liquid Printer",
+          "type": "boolean",
+          "value": true,
+          "serverControllable": true,
+          "serverDisabled": false,
+          "effectiveValue": true
+        },
+        {
+          "id": "midairPlacement",
+          "name": "Midair Placement",
+          "type": "boolean",
+          "value": false,
+          "serverControllable": true,
+          "serverDisabled": false,
+          "effectiveValue": false
         }
       ],
       "extra": {
@@ -90,6 +108,24 @@ The response includes the updated module object.
         "serverControllable": true,
         "serverDisabled": false,
         "effectiveValue": true
+      },
+      {
+        "id": "liquidPrinter",
+        "name": "Liquid Printer",
+        "type": "boolean",
+        "value": true,
+        "serverControllable": true,
+        "serverDisabled": false,
+        "effectiveValue": true
+      },
+      {
+        "id": "midairPlacement",
+        "name": "Midair Placement",
+        "type": "boolean",
+        "value": false,
+        "serverControllable": true,
+        "serverDisabled": false,
+        "effectiveValue": false
       }
     ],
     "extra": {
