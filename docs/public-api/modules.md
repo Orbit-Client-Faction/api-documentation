@@ -148,4 +148,29 @@ Use `module.enable` to remove the server restriction:
 
 `module.enable` does not force a module on. It removes the server restriction and restores the module only if it was enabled before the server disabled it.
 
+Modules without allowlisted settings return an empty `settings` array and no `extra` object. For example, disabling Best Adjust:
+
+```json
+{
+  "v": 1,
+  "op": "module.disable",
+  "moduleId": "BestAdjust"
+}
+```
+
+```json
+{
+  "v": 1,
+  "op": "module.disable",
+  "ok": true,
+  "module": {
+    "id": "BestAdjust",
+    "name": "Best Adjust",
+    "enabled": false,
+    "serverDisabled": true,
+    "settings": []
+  }
+}
+```
+
 Use [Options](/public-api/options) for setting shape and setting restriction operations.

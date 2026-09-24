@@ -9,6 +9,7 @@ Module IDs are case-insensitive in requests, but integrations should use the exa
 | `Printer` | Schematic Printer state, Printer runtime details, Printer settings, and server disable support. |
 | `Minimap` | Minimap module state. |
 | `EasyPlace` | Easy Place module state and server disable support. |
+| `BestAdjust` | Best Adjust module state and server disable support. |
 
 Only query modules listed on this page. Orbit may add more queryable modules later as the public API expands.
 
@@ -33,6 +34,7 @@ Servers can disable and re-enable only the modules listed here.
 | --- | --- |
 | `Printer` | Disables Schematic Printer for the current server session. |
 | `EasyPlace` | Disables Easy Place for the current server session. |
+| `BestAdjust` | Disables Best Adjust for the current server session. |
 
 ## Server-Controllable Settings
 
